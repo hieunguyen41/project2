@@ -1,0 +1,67 @@
+
+
+/* xửlý sản phẩm liên quan */
+.products ul {list-style: none; padding: 0;}
+.products li {background-color: #fff; margin-bottom: var(--stdDistance);
+			padding: 10px;}
+.products a {display: block; text-decoration: none;
+		color: #000;}
+.products img {width: 100%;;}
+	.products p {margin: 5px 10px;}
+.products .he-nut {display: flex;padding: 0 10px 10px 10px;}
+.products .he-nut button {width: 70%; background-color: transparent; 
+		border: solid 1px var(--color2); padding: var(--stdDistance) 0;
+		color: var(--color2); border-radius: 10px;}
+.products .he-nut a {margin-left: 10px; width: calc(30% - 10px); 
+		border: solid 1px var(--color1); text-align: center; color: var(--color1); border-radius: 10px; padding: var(--stdDistance) 0;}
+
+/*tt hot. new*/
+.products .sp-tag {position: relative}
+.products .sp-tag:before{
+	content:	attr(data-tag-text); height: 45px; width: 90px; position: absolute; right: 15px; top: -15px;
+	text-align: center; line-height: 60px; background-color: #FF0004; color: #fff;
+}
+.img {max-width: 100%}
+.products .sp-tag:after{
+	content: "";
+	/*width: 90px; height: 45px;*/
+	width: 0; height: 0;
+	border-top: solid 45px #FF0004;
+	border-left: solid 45px transparent;
+	border-right: solid 45px transparent;
+	position: absolute; right: 15px; top: 30px;
+	
+}
+/*=====phan anh 1===*/
+.products .sp-tag {position: relative}
+.products .sp-tag:before{
+	content:	attr(data-tag-text); height: 45px; width: 90px; position: absolute; right: 15px; top: -15px;
+	text-align: center; line-height: 60px; background-color: #FF0004; color: #fff;
+}
+
+.products .sp-tag:after{
+	content: "";
+	/*width: 90px; height: 45px;*/
+	width: 0; height: 0;
+	border-top: solid 45px #FF0004;
+	border-left: solid 45px transparent;
+	border-right: solid 45px transparent;
+	position: absolute; right: 15px; top: 30px;
+	
+}
+@media screen and (min-width: 768px) {
+	/* đi tìm thẻ li thứ 2, 5, 8.... */
+	.products li:nth-child(3n-1) {margin-left: var(--stdDistance); margin-right: var(--stdDistance);}
+	.products ul {display: flex;margin: 0; flex-flow: row wrap;}
+	.products li {width: calc((100% - 2*var(--stdDistance)) / 3);
+		padding: 0;}
+	.products img {width: 100%; float: none; margin-left: 0;}
+	.products .he-nut {flex-flow: row wrap}
+	.products .he-nut button {width: 100%; margin-bottom: 10px}
+	.products .he-nut a {width: 100%; margin-left: 0;
+}
+	@media screen and (min-width: 992px){
+		.products .he-nut button {width: 70%; margin-bottom: 0;}
+		.products .he-nut a {margin-left: 10px; width: calc(30% - 10px);}
+	}
+				} /* dấu đóng 768px */

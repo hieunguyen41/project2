@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS document */
+/* .pro-heading {background-color: #d5c978;} */
+.pro-heading button {width: 150px; height: 150px; float: right; border: solid 1px var(--color2);
+			font-size: var(--fontsize2); border-radius: 10px; color: var(--color2);
+			margin-left: var(--stdDistance); font-family: 'Roboto', sans-serif;}
+.pro-heading h1 { font-size: var(--fontsize2); color: var(--color1);
+			font-family: 'Roboto', sans-serif; }			
+.pro-heading p {margin: 0;}
+
+/* ==============xử lý phần pro-info */
+
+.pro-info {margin-top: var(--stdDistance)}
+.pro-info .he-tab {list-style: none; padding: 0; display: flex; 
+			border-bottom: solid 1px #ddd; }
+.pro-info .he-tab li {margin-right: var(--stdDistance); padding: 10px 0;
+			position: relative;}
+.pro-info .he-tab li:before {content: ""; width: 50%; height: 1px;
+			background-color: var(--color2); position: absolute;
+			left: 50%; bottom: -1px; transform: translate(-50%,0); transition: width 0.3s;}
+.pro-info .he-tab .cur-tab {color: var(--color2);}
+.pro-info .he-tab .cur-tab:before {width: 100%;}
+.pro-info > div {display: none; }
+.pro-info .info {display: block;}
+.gallery .gallery-thumbs {margin-top: var(--stdDistance); margin-bottom:var(--stdDistance);}
+.gallery .gallery-thumbs .swiper-button-next,
+.gallery .gallery-thumbs .swiper-button-prev {background-color: rgba(0, 0, 0, 0.5); width: 40px; height: 40px;
+				border-radius: 50%; color: #fff; }
+.gallery .gallery-thumbs .swiper-button-next:after,
+.gallery .gallery-thumbs .swiper-button-prev:after {font-size: 1.6rem; font-family: "Font Awesome 5 Free";
+		font-weight: 900; }
+.gallery .gallery-thumbs .swiper-button-next:after {content: "\f138";}
+.gallery .gallery-thumbs .swiper-button-prev:after {content: "\f137";}
+/* xửlý sản phẩm liên quan */
+.pro-related ul {list-style: none; padding: 0;}
+.pro-related li {background-color:#868686; margin-bottom: var(--stdDistance);
+			padding: 10px;}
+.pro-related a {display: block; text-decoration: none;
+		color: #000;}
+.pro-related img {width: 50%; float: right; margin-left: 10px;} 
+
+@media screen and (min-width: 768px) {
+	/* đi tìm thẻ li thứ 2, 5, 8.... */
+	.pro-related li:nth-child(3n-1) {margin-left: var(--stdDistance); margin-right: var(--stdDistance);}
+	.pro-related ul {display: flex; flex-flow: row wrap; padding: 0}
+	.pro-related li {width: calc((100% - 2*var(--stdDistance) / 3)); padding: 0;}
+	.pro-related img {width: 100%; float:  none; margin-left: 0;}
+	.pro-related p {margin: 5px;}
+				} /* dấu đóng 768px */

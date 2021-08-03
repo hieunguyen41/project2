@@ -1,0 +1,666 @@
+@charset "utf-8";
+/* CSS document */
+/* .nut {background-color: #9cf3e1;}
+.logo {background-color: #dad78a;}
+.gh	{background-color: #bfd8f0;}
+.frm-sch {background-color: #fcaea3;}
+.mo-ta {background-color: #bafddd;}
+.gallery {background-color: #f7cb83;}
+.pro-related {background-color: #ebebeb;}
+/* .company-name {background-color: #a2bff9;}
+.social-links {background-color: #d5d5d5;}
+.footer-menu {background-color: #fcb075;} 
+.the-menu {background-color: lightgreen;}
+.banner1 {background-color: #a28f9d;}
+.banner2 {background-color: #56BD00;}
+.banner0 {background-color: #3976e1;}
+header {background-color: #bcbcbc;} */
+body {
+  background: linear-gradient(-45deg, #FFD27F, #FFFBE5, #FFF, #B20000);
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+body {margin: 0; padding: 0; /*background-color: none; background-image: linear-gradient(to right, #fff,#FFEDCC,#517B8D; #508871);*/}
+*, *:before, after {box-sizing: border-box;}
+header .logo {width: 200px;}
+header {min-height: 80px; display: flex; justify-content: space-between;
+	align-items: center; }
+	header a:last-child {margin-right: 7px;}
+
+/*Những giá trị thông minh dùng đi dùng lại nhiều lần  */
+:root {
+ --color1: #E59400;
+ --color2: #003d9a;
+ --color3: #ff9800;
+ --fontsize1:  1.2rem;
+ --fontsize2:  1.6rem;
+ --stdDistance:  15px; /*standard distance:  khoảng cách chuẩn	 */
+}
+.gia-km {
+	color: var(--color3);
+}
+.ten-sp {
+	color: var(--color1);
+}
+body {
+	/*font-family: 'Open Sans', sans-serif;*/
+	font-size: var(--fontsize1);
+	background-color: #eeeeed;
+}
+.padding-tren-duoi {
+	padding-top: var(--stdDistance);
+	padding-bottom: var(--stdDistance);
+}
+.section-heading {
+	color: var(--color1);
+	font-size: var(--fontsize2);
+	font-family: 'Roboto', sans-serif;
+	position: relative;
+	padding-bottom: 5px;
+}
+/* khối code  dưới là 1 kiểu trình bày
+.section-heading:before {content: ""; width: 100%; height: 2px; position: absolute;
+		left: 0; bottom: 0; background:  -webkit-linear-gradient(left, var(--color2) 5%, var(--color3) 5%, var(--color3) 10%, var(--color1) 10%);
+			transform: skew(15deg);} */
+.section-heading:before {
+	content: "";
+	width: 90px;
+	height: 2px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: var(--color2);
+}
+/* ============================== */
+img, video {
+	max-width: 100%;
+}
+.logo a img {
+	width: 200px;
+}
+.nut, .logo, .gh {
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.frm-sch form {
+	display: flex;
+	align-items: center;
+	/* đảo thứ tự hiển thị trước sau của ô nhập và nút tìm:  row-reverse; */
+	flex-flow: row-reverse wrap;
+}
+.frm-sch input[type="search"] {
+	padding: 10px 10px 10px 40px;
+	width: 100%;
+	border: solid 1px #bbb;
+	border-radius: 30px; /* nếu rộng 100% thì không đủ chỗ, cần làm cho nút tìm đi vào trong ô nhập */
+}
+.frm-sch input[type="submit"] {
+	width: 24px;
+	height: 24px;
+	background-color: rosybrown;
+	border: none;
+	text-indent: -9999px;
+	margin-right: -34px;
+	background-image: url("../img/magnifying-glass.png");
+	background-size: cover;
+	background-color: transparent;
+}
+:focus {
+	outline: none;
+}
+footer {background-color:#424242;
+	
+	background: rgba(29,29,29,0.85);
+	background-image: url(../img/005.jpg);
+	color: #fff;
+}
+img {max-width: 100%;}
+footer a {
+	color: #fff;
+	text-decoration: none;
+}
+footer .social-links ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+}
+footer .social-links li {
+	margin-right: var(--stdDistance);
+	font-size: var(--fontsize2);
+}
+footer .footer-menu ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-flow: column wrap;
+	height: 120px;
+}
+/* Xử lý nút 3 vạch và menu */
+#n3v {
+	width: 40px;
+	height: 50px;
+	border: none;
+	background-color: transparent;
+}
+#n3v > div {
+	background-color: var(--color1);
+	margin-top: 5px;
+	height: 3px;
+}
+#n3v .top {
+	width: 100%;
+}
+#n3v .mid {
+	width: 70%;
+	transition: opacity 0.3s;
+}
+#n3v .bot {
+	width: 30%;
+}
+#n3v .top, #n3v .bot {
+	transition: width 0.3s, transform 0.3s;
+}
+.show-menu #n3v .mid {
+	opacity: 0;
+}
+.show-menu #n3v .top {
+	transform: translate(0, 8px) rotate(45deg);
+	width: 100%;
+	background-color: #fff;
+}
+.show-menu #n3v .bot {
+	transform: translate(0, -8px) rotate(-45deg);
+	width: 100%;
+	background-color: #fff;
+}
+.show-menu #n3v {
+	position: fixed;
+	z-index: 99;
+}
+.the-menu {
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/v01.jpg);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 98;
+	clip-path: circle(0% at 0 0);
+	transition: clip-path 0.3s;
+}
+.the-menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 var(--stdDistance);
+}
+.the-menu a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	display: block;
+	padding: 10px 10px 10px 0;
+	border-bottom: solid 1px #fff;
+}
+.show-menu .the-menu {
+	clip-path: circle(150% at 0 0);
+}
+.the-menu > ul {
+	margin-top: 60px;
+}
+.phan-trang ul {
+	list-style: none;
+	padding: 0;
+	margin: var(--stdDistance) 0;
+	display: flex;
+	justify-content: center;
+}
+.phan-trang li {
+	margin: 0 10px;
+}
+.phan-trang a i {
+	font-size: var(--fontsize2);
+	color: var(--color1);
+}
+/*xu li phan banner0truot*/
+.banner0truot {
+	height: 200px;
+}
+.banner0truot a {
+	text-decoration: none;
+	display: block;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	color: #fff;
+}
+/*.banner0truot .b1 {
+	background-image: url(../img/banner_Cristallo-Legno-3.jpg);
+}
+.banner0truot .b2 {
+	background-image: url(../img/banner_Cristallo-Legno-3.jpg);
+}
+.banner0truot .b3 {
+	background-image: url(../img/banner_Cristallo-Legno-3.jpg);
+}*/
+.banner0truot a h1 {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+}
+.banner0truot .b1 h1 {
+	bottom: 30px;
+	left: 45px;
+}
+.banner0truot .b2 h1 {
+	bottom: 15px;
+	right: 60px;
+}
+.banner0truot .b3 h1 {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0,0,0,0.5);
+	/*background: -webkit-linear-gradient(90deg, transparent, #000);*/
+	padding: 10px;
+	width: 70%;
+	text-align: center;
+}
+.banner0truot .swiper-button-prev:after, .banner0truot .swiper-button-next:after {
+	font-family: "font awesome 5 free";
+	font-weight: 900;
+	color: rgba(255,255,255,0.8);
+	font-size: var(--fontsize2)
+}
+.banner0truot .swiper-button-prev:after {
+	content: "\f137";
+}
+.banner0truot .swiper-button-next:after {
+	content: "\f138";
+}
+
+/* End 3 vạch */
+@media screen and (min-width: 768px) {
+.logo {
+	justify-content: flex-start;
+}
+.gh {
+	justify-content: flex-end;
+}
+.the-menu {
+	position: static;
+	clip-path: none;
+	background-image: none;
+	background-color: transparent;
+}
+.the-menu ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	margin: 0;
+}
+.the-menu li {
+	margin: 0 3px;
+}
+.the-menu a {
+	color: #fff; background-color:#E59400; border-radius: 3px; text-align: center;
+	width: 100px;
+
+	border-bottom: none;
+	padding: 0;
+}
+	
+.the-menu a i {
+	/*color: var(--color1);*/
+}
+/* XỬ LÝ BANNER 1, BANNER2 */
+/*.banner1, .banner2 {
+	display: block;
+	height: 200px;
+	background-size: cover;
+	text-decoration: none;
+	background-position: center;
+	position: relative;
+	color: #fff;
+}
+.banner1 {
+	background-image: url("../img/CL16-Tango-4.jpg");
+}
+.banner2 {
+	background-image: url("../img/Cabrio-opened-2017.jpg");
+}
+.banner1 h2, .banner2 h2 {
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 0;
+	padding: var(--stdDistance);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	font-size: var(--fontsize2);*/
+}
+.gallery {
+	padding-top: var(--stdDistance);
+}
+footer .social-links ul {
+	justify-content: flex-end;
+}
+footer .social-links li {
+	margin-right: 0;
+	margin-left: var(--stdDistance);
+}
+footer .footer-menu ul {
+	height: 60px;
+	border-top: solid 1px #ddd;
+	align-content: space-between;
+}
+header {
+	border-bottom: solid 1px #bbb;
+}
+.phan-trang a {
+	text-decoration: none;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: solid 1px var(--color1);
+	border-radius: 5px;
+	text-align: center;
+	line-height: 30px;
+}
+.phan-trang li:first-child a, .phan-trang li:last-child a {
+	border: none;
+	line-height: 40px;
+}
+.phan-trang .cur-page a {
+	background-color: var(--color1);
+	color: #fff
+}
+.products {
+	padding-bottom: 0;
+}
+.phan-trang ul {
+margin-bottom: calc(2 * var(--stdDistance))
+}
+/* dấu đóng 768px */
+
+@media screen and (min-width: 992px) {
+/*.banner0 {
+	display: block;
+	background-size: cover;
+	text-decoration: none;
+	background-position: center;
+	position: relative;
+	color: #fff;
+	background-image: url("../img/banner_Cristallo-Legno-3.jpg");
+}
+.banner0 h1 {
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 0;
+	padding: var(--stdDistance);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	font-size: var(--fontsize2);
+	font-family: 'Roboto', sans-serif;
+}
+.banner0:hover h1, .banner1:hover h2, .banner2:hover h2 {
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+footer a:hover {
+	color: #fff;
+}
+.banner0truot {
+	height: auto
+}*/
+} /* dấu đóng 922px */
+
+/* :hover chỉ xử lý dành cho desktop */
+@media screen and (min-width: 992px) {
+.products .he-nut bitton {
+	width: 70%;
+	margin-bottom: 0;
+}
+.products .he-nut a {
+	margin-left: 10px;
+	width: calc(30% - 10px);
+}
+/*ap dung tu 992 tro len*/
+	/*dau dong cua @992, tu dong nay tro di khong viet rules nua*/
+}
+/*truọt banner*/
+img {max-width: 100% }
+.show-menu #overplay-page {
+	left: 0;
+}
+
+.banner-truot .swiper-pagination-bullet {
+	background: #fff;
+	opacity: 0.6;
+	width: 12px;
+	height: 12px;
+	border-radius: 10px;
+	transition: width 0.3s;
+}
+.banner-truot .swiper-pagination-bullet-active {
+	background: #fff;
+	opacity: 1;
+	width: 60px;
+}
+*, *:before, *:after {
+	box-sizing: border-box
+}
+.banner-truot {
+	height: 400px;
+}
+.banner-truot .swiper-slide {
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.banner-truot .b1 {
+	background-image: url(../img/09.jpg);
+	background-size: cover;
+}
+.banner-truot .b2 {
+	background-image: url(../img/14.jpg);
+	background-size: cover;
+}
+.banner-truot .b3 {
+	background-image: url(../img/05.jpg);
+	background-size: cover;
+}
+.banner-truot .b4 {
+	background-image: url(../img/01.jpg);
+	background-size: cover;
+}
+.banner-truot .b5 {
+	background-image: url(../img/03.jpg);
+	background-size: cover;
+}
+.banner-truot .b6 {
+	background-image: url(../img/04.jpg);
+	background-size: cover;
+}
+.banner-truot .b7 {
+	background-image: url(../img/v4.jpg);
+	background-size: cover;
+}
+.banner-truot h1 {
+	margin: 50px;
+	padding: 50px;
+	color: #FFF;
+	border-radius: 40px;
+	background-color: rgba(0, 0, 0, 0, 6);
+	background-color: #5B5B5B;
+	opacity: 0.6;
+	color: #F3FF00;
+}
+/*==== star*/
+
+* {
+	box-sizing: border-box;
+}
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.rating {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	overflow: hidden;
+	flex-direction: row-reverse;
+	height: 150px;
+	position: relative;
+}
+.rating-0 {
+	filter: grayscale(100%);
+}
+.rating > input {
+	display: none;
+}
+.rating > label {
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	margin-top: auto;
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 76%;
+	transition: .3s;
+}
+.rating > input:checked ~ label, .rating > input:checked ~ label ~ label {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+}
+.rating > input:not(:checked) ~ label:hover, .rating > input:not(:checked) ~ label:hover ~ label {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+}
+.emoji-wrapper {
+	width: 100%;
+	text-align: center;
+	height: 100px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.emoji-wrapper:before, .emoji-wrapper:after {
+	content: "";
+	height: 15px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: 1;
+}
+.emoji-wrapper:before {
+	top: 0;
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,0) 100%);
+}
+.emoji-wrapper:after {
+	bottom: 0;
+	background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,0) 100%);
+}
+.emoji {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: .3s;
+}
+.emoji > svg {
+	margin: 15px 0;
+	width: 70px;
+	height: 70px;
+	flex-shrink: 0;
+}
+#rating-1:checked ~ .emoji-wrapper > .emoji {
+	transform: translateY(-100px);
+}
+#rating-2:checked ~ .emoji-wrapper > .emoji {
+	transform: translateY(-200px);
+}
+#rating-3:checked ~ .emoji-wrapper > .emoji {
+	transform: translateY(-300px);
+}
+#rating-4:checked ~ .emoji-wrapper > .emoji {
+	transform: translateY(-400px);
+}
+#rating-5:checked ~ .emoji-wrapper > .emoji {
+	transform: translateY(-500px);
+}
+.feedback {
+	background-color: #fff;
+	width: 100%;
+	padding: 15px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	box-shadow: 0 4px 30px rgba(0,0,0,.05);
+}
+/*chữ nhấp nháy*/
+@-webkit-keyframes my {
+				0% { color: #F8CD0A; }
+				50% { color: #F300E7; }
+				100% { color: #FF0004; }
+				}
+				@-moz-keyframes my {
+				0% { color: #F8CD0A; }
+				50% { color: #005900; }
+				100% { color: #FF0004; }
+				}
+				@-o-keyframes my {
+				0% { color: #F8CD0A; }
+				50% { color: #4C8A4C; }
+				100% { color: #FF0004; }
+				}
+				@keyframes my {
+				0% { color: #F8CD0A; }
+				50% { color: #CC8400; }
+				100% { color: #FF0004; }
+				}
+				.row h1 {
+				background:none;
+				font-size:24px;
+				font-weight:bold;
+				-webkit-animation: my 450ms infinite;
+				-moz-animation: my 450ms infinite;
+				-o-animation: my 450ms infinite;
+				animation: my 450ms infinite;
+				}
+				.company-name  h8 {
+									background:none;
+									font-size: 35px;
+									font-weight:bold;
+									-webkit-animation: my 450ms infinite;
+									-moz-animation: my 450ms infinite;
+									-o-animation: my 450ms infinite;
+									animation: my 450ms infinite;
+}
+		
+/*slide truoẹt*/
+
